@@ -1086,66 +1086,66 @@ FUNCTION {sort.format.title}
 }
 
 FUNCTION {author.sort}
-{ author empty$
-    { key empty$
+{ key empty$
+    { author empty$
         { "to sort, need author or key in " cite$ * warning$
           ""
         }
-        { key sortify }
+        { author sort.format.names }
       if$
     }
-    { author sort.format.names }
+    { key sortify }
   if$
 }
 
 FUNCTION {author.editor.sort}
-{ author empty$
-    { editor empty$
-        { key empty$
+{ key empty$
+    { author empty$
+        { editor empty$
             { "to sort, need author, editor, or key in " cite$ * warning$
               ""
             }
-            { key sortify }
+            { editor sort.format.names }
+          if$
+        }
+        { author sort.format.names }
+      if$
+    }
+    { key sortify }
+  if$
+}
+
+FUNCTION {author.organization.sort}
+{ key empty$
+    { author empty$
+        { organization empty$
+            { "to sort, need author, organization, or key in " cite$ * warning$
+              ""
+            }
+            { "The " #4 organization chop.word sortify }
+          if$
+        }
+        { author sort.format.names }
+      if$
+    }
+    { key sortify }
+  if$
+}
+
+FUNCTION {editor.organization.sort}
+{ key empty$
+    { editor empty$
+        { organization empty$
+            { "to sort, need editor, organization, or key in " cite$ * warning$
+              ""
+            }
+            { "The " #4 organization chop.word sortify }
           if$
         }
         { editor sort.format.names }
       if$
     }
-    { author sort.format.names }
-  if$
-}
-
-FUNCTION {author.organization.sort}
-{ author empty$
-    { organization empty$
-        { key empty$
-            { "to sort, need author, organization, or key in " cite$ * warning$
-              ""
-            }
-            { key sortify }
-          if$
-        }
-        { "The " #4 organization chop.word sortify }
-      if$
-    }
-    { author sort.format.names }
-  if$
-}
-
-FUNCTION {editor.organization.sort}
-{ editor empty$
-    { organization empty$
-        { key empty$
-            { "to sort, need editor, organization, or key in " cite$ * warning$
-              ""
-            }
-            { key sortify }
-          if$
-        }
-        { "The " #4 organization chop.word sortify }
-      if$
-    }
-    { editor sort.format.names }
+    { key sortify }
   if$
 }
 
