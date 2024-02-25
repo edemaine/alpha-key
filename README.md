@@ -22,7 +22,7 @@ which has an artificial first author representing the entire group:
 
 `alpha.bst` would generate a key like [MAD<sup>+</sup>23], but this mixes
 the group name with author names.  With `alpha-key.bst`, you can use the `key`
-field to override the generated key to [MIT<sup>+</sup>23] as follows:
+field to override the generated key to [MIT23] as follows:
 
 ```bibtex
 @InProceedings{DarkRays_CCCG2023,
