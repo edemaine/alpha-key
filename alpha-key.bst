@@ -1,3 +1,7 @@
+% BibTeX bibliography style 'alpha-key' enabling overriding labels with 'key'
+   % Copyright (C) 2024 by Erik Demaine.
+   % Released under an MIT License, subject to further conditions below.
+   % Based on:
 % BibTeX standard bibliography style `alpha'
    % Version 0.99b (8-Dec-10 release) for BibTeX versions 0.99a or later.
    % Copyright (C) 1984, 1985, 1988, 2010 Howard Trickey and Oren Patashnik.
