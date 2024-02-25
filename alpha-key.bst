@@ -973,58 +973,58 @@ FUNCTION {format.lab.names}
 }
 
 FUNCTION {author.key.label}
-{ author empty$
-    { key empty$
+{ key empty$
+    { author empty$
         { cite$ #1 #3 substring$ }
-        { key #3 text.prefix$ }
+        { author format.lab.names }
       if$
     }
-    { author format.lab.names }
+    { key #3 text.prefix$ }
   if$
 }
 
 FUNCTION {author.editor.key.label}
-{ author empty$
-    { editor empty$
-        { key empty$
+{ key empty$
+    { author empty$
+        { editor empty$
             { cite$ #1 #3 substring$ }
-            { key #3 text.prefix$ }
+            { editor format.lab.names }
+          if$
+        }
+        { author format.lab.names }
+      if$
+    }
+    { key #3 text.prefix$ }
+  if$
+}
+
+FUNCTION {author.key.organization.label}
+{ key empty$
+    { author empty$
+        { organization empty$
+            { cite$ #1 #3 substring$ }
+            { "The " #4 organization chop.word #3 text.prefix$ }
+          if$
+        }
+        { author format.lab.names }
+      if$
+    }
+    { key #3 text.prefix$ }
+  if$
+}
+
+FUNCTION {editor.key.organization.label}
+{ key empty$
+    { editor empty$
+        { organization empty$
+            { cite$ #1 #3 substring$ }
+            { "The " #4 organization chop.word #3 text.prefix$ }
           if$
         }
         { editor format.lab.names }
       if$
     }
-    { author format.lab.names }
-  if$
-}
-
-FUNCTION {author.key.organization.label}
-{ author empty$
-    { key empty$
-        { organization empty$
-            { cite$ #1 #3 substring$ }
-            { "The " #4 organization chop.word #3 text.prefix$ }
-          if$
-        }
-        { key #3 text.prefix$ }
-      if$
-    }
-    { author format.lab.names }
-  if$
-}
-
-FUNCTION {editor.key.organization.label}
-{ editor empty$
-    { key empty$
-        { organization empty$
-            { cite$ #1 #3 substring$ }
-            { "The " #4 organization chop.word #3 text.prefix$ }
-          if$
-        }
-        { key #3 text.prefix$ }
-      if$
-    }
-    { editor format.lab.names }
+    { key #3 text.prefix$ }
   if$
 }
 
